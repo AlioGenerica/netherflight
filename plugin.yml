@@ -1,0 +1,21 @@
+name: netherflight
+version: 1.0.0
+main: com.live.AlioGenerica.netherflight.netherflight
+description: A simple plugin to give flight in the nether.
+database: false
+
+author: Alio_Generica
+
+commands:
+        flight:
+                description: lets the player toggle flight on if he is in the nether.
+                permission: netherflight.toggle
+                permission-message: You don't have permission to toggle your flight!
+                aliases: fl
+                usage: /<command>        
+
+permissions:
+        netherflight.toggle:
+                description: Allows player to toggle flight in nether.
+                children:
+                        netherflight.*: true
