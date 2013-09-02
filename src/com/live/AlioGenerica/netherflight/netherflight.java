@@ -1,10 +1,9 @@
 package com.live.AlioGenerica.netherflight;
 
-import org.bukkit.World;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class netherflight extends JavaPlugin {
@@ -12,11 +11,12 @@ public final class netherflight extends JavaPlugin {
 	private String message;
 
 	public void onEnable(){
-		getLogger().info("netherflight v1.0.0 has been enabled");
+		getServer().getPluginManager().registerEvents(new worldlistener(), this);
+		getLogger().info("netherflight v1.0.1 has been enabled");
 	}
  
 	public void onDisable(){
-		getLogger().info("netherflight v1.0.0 has been disabled");
+		getLogger().info("netherflight v1.0.1 has been disabled");
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -38,13 +38,7 @@ public final class netherflight extends JavaPlugin {
 		return false;
 	}
 	
-	public void onWorldChange(PlayerChangedWorldEvent event){
-	    Player p = event.getPlayer();
-		if(!p.getWorld().getEnvironment().equals(World.Environment.NETHER)){  
-			flight.stopf(p);
-		}
-	}
-
+	
 	public String getMessage() {
 		return message;
 	}

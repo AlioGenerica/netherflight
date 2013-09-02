@@ -36,11 +36,5 @@ static ArrayList<Player> flyers = new ArrayList<Player>( );
 		}
 	}
 
-	public static void stopf(Player p) {
-		if(p.getGameMode() == GameMode.CREATIVE){
-			
-		} else {
-			p.setAllowFlight(false);
-		}
-	}
+
 }
